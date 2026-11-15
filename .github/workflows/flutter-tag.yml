@@ -10,9 +10,10 @@ on:
       - '[0-9]+.[0-9]+.[0-9]+-[0-9]+'
 
 jobs:
-  run-flutter-tag-build:
-  contents: write
-    uses: ./.github/workflows/flutter-build.yml
+  build:
+    permissions:
+      contents: write  
+    uses: tototu/rustdesk/.github/workflows/flutter-build.yml@68a7bd97a2c0a3280566d0ada27bb8cd0f051335
     secrets: inherit
     with:
       upload-artifact: true
